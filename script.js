@@ -78,15 +78,15 @@ setInterval(() => {
         const speed = player.speed / 6
         const height = Math.tanh(105 - obstacle.y)
 
-        const [jump, crounch] = dino.compute([
+        const [jump, crouch] = dino.compute([
             distance,
             speed,
             height
         ]);
 
-        if (jump === crounch) return;
+        if (jump === crouch) return;
         if (jump) controls.dispatch('jump')
-        if (crounch) controls.dispatch('crounch')
+        if (crouch) controls.dispatch('crouch')
       
 
     };
